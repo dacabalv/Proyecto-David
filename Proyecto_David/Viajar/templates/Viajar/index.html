@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>MiProyecto</title>
+	</head>
+	<body>
+		{% if PaginaPrincipal %}
+			<table border="2">
+				<tr>
+					<td>Nombre</td>
+					<td>Fecha</td>
+				</tr>
+				{% for Viajar in PaginaPrincipal %}
+					<tr>
+						<td>{{ Viajar.nombre }}</td>
+						<td>{{ Viajar.fecha }}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		{% else %}
+			<p>Página del cheriff</p>			
+		{% endif %}
+	</body>
+</html>
