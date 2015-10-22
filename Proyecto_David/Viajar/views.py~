@@ -1,0 +1,7 @@
+from django.shortcuts import render
+from Viajar.models import Viaje
+# Create your views here.
+
+def indice(request):
+   PaginaPrincipal = Viaje.objects.all()
+   return render(request, 'Viajar/index.html', {'PaginaPrincipal': PaginaPrincipal })

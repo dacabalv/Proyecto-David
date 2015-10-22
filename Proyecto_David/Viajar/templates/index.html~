@@ -6,13 +6,19 @@
 		{% if PaginaPrincipal %}
 			<table border="2">
 				<tr>
-					<td>Nombre</td>
-					<td>Fecha</td>
+					<td>Destino</td>
+					<td>Instrucciones</td>
+					<td>Salida</td>
+					<td>Regreso</td>
+					<td>NumNnoches</td>
 				</tr>
 				{% for Viajar in PaginaPrincipal %}
 					<tr>
-						<td>{{ Viajar.nombre }}</td>
-						<td>{{ Viajar.fecha }}</td>
+						<td>{{ Viajar.Destino }}</td>
+						<td>{{ Viajar.Instrucciones }}</td>
+						<td>{{ Viajar.Salida }}</td>
+						<td>{{ Viajar.Regreso }}</td>
+						<td>{{ Viajar.NumNoches }}</td>
 					</tr>
 				{% endfor %}
 			</table>
