@@ -3,5 +3,9 @@ from Viajar.models import Viaje
 # Create your views here.
 
 def indice(request):
-   PaginaPrincipal = Viaje.objects.all()
-   return render(request, 'Viajar/index.html', {'PaginaPrincipal': PaginaPrincipal })
+   Viajes = Viaje.objects.all()
+   return render(request, 'Viajar/index.html', {'Viajes': Viajes })
+
+def registro(request):
+	Viajes = Viaje.objects.all()
+	return render(request, 'Viajar/registro.html', {'registro': registro})

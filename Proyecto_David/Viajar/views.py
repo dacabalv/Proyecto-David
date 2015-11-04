@@ -5,3 +5,5 @@ from Viajar.models import Viaje
 def indice(request):
    Viajes = Viaje.objects.all()
    return render(request, 'Viajar/index.html', {'Viajes': Viajes })
+
+

@@ -6,19 +6,21 @@
 		{% if Viajes %}
 			<table border="2">
 				<tr>
-					<td>Destino</td>
-					<td>Instrucciones</td>
-					<td>Salida</td>
-					<td>Regreso</td>
-					<td>NumNnoches</td>
+					<td>continente</td>
+					<td>pais</td>
+					<td>lugar</td>
+					<td>tipo</td>
+					<td>precio</td>
+					<td>plazas_disponibles</td>
 				</tr>
 				{% for viaje in Viajes %}
 					<tr>
-						<td>{{ viaje.Destino }}</td>
-						<td>{{ viaje.Instrucciones }}</td>
-						<td>{{ viaje.Salida }}</td>
-						<td>{{ viaje.Regreso }}</td>
-						<td>{{ viaje.NumNoches }}</td>
+						<td>{{ viaje.continente }}</td>
+						<td>{{ viaje.pais }}</td>
+						<td>{{ viaje.lugar }}</td>
+						<td>{{ viaje.tipo }}</td>
+						<td>{{ viaje.precio }}</td>
+						<td>{{ viaje.plazas_disponibles }}</td>
 					</tr>
 				{% endfor %}
 			</table>
