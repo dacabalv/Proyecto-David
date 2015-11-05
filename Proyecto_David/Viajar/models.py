@@ -9,12 +9,13 @@ class Viaje(models.Model):
 	tipo = models.CharField(max_length=30,default='avion')
 	precio = models.CharField(max_length=10,default='nulo')
 	plazas_disponibles = models.CharField(max_length=20,default='0')
+	edicion = models.ForeignKey(Edicion)
 	
 
 	def __str__(self):
 		return '%s' % (self.lugar)
 
-class Usuarios(models.Model):
+class Usuario(models.Model):
 	nombre = models.CharField(max_length=30)
 	apellidos = models.CharField(max_length=30)
 	dirección = models.CharField(max_length=70)
@@ -28,12 +29,15 @@ class Usuarios(models.Model):
 		return '%s' % (self.Nombre)
 
 
-class Reserva(models.Model):
+class Edicion(models.Model):
 	fecha_salida = models.CharField(max_length=30)
 	fecha_regreso = models.CharField(max_length=30)
 	n_plazas = models.CharField(max_length=30)
-	codigo_reserva = models.TextField()
+	viaje = models.OneToOneField(Viaje)
 
 	def __str__(self):
 		return '%s' % (self.codigo_reserva)
+
+
+class Comentario(models.Model):
 	
