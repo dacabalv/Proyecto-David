@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -9,7 +10,7 @@ class Viaje(models.Model):
 	tipo = models.CharField(max_length=30,default='avion')
 	precio = models.CharField(max_length=10,default='nulo')
 	plazas_disponibles = models.CharField(max_length=20,default='0')
-	edicion = models.ForeignKey(Edicion)
+	
 	
 
 	def __str__(self):
@@ -24,6 +25,7 @@ class Usuario(models.Model):
 	pais = models.CharField(max_length=15)
 	provincia = models.CharField(max_length=15)
 	ciudad = models.CharField(max_length=15)
+	user = models.OneToOneField(User)
 
 	def __str__(self):
 		return '%s' % (self.Nombre)
@@ -33,11 +35,13 @@ class Edicion(models.Model):
 	fecha_salida = models.CharField(max_length=30)
 	fecha_regreso = models.CharField(max_length=30)
 	n_plazas = models.CharField(max_length=30)
-	viaje = models.OneToOneField(Viaje)
+	viaje = models.ForeignKey(Viaje)
 
 	def __str__(self):
 		return '%s' % (self.codigo_reserva)
 
 
 class Comentario(models.Model):
+	opinion = models.TextField()
+	usuario = models.ForeignKey(Usuario)
 	
