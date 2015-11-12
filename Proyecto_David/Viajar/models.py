@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class Viaje(models.Model):
 	continente = models.CharField(max_length=30,default='Africa')
 	pais = models.CharField(max_length=30,default='Mali')
@@ -37,8 +38,15 @@ class Edicion(models.Model):
 	n_plazas = models.CharField(max_length=30)
 	viaje = models.ForeignKey(Viaje)
 
+	class Meta:
+		verbose_name = 'edición'# El nombre del modelo
+		verbose_name_plural = 'ediciones'# El nombre en plural
+
+	def __str__(self): 
+		return self.Edicion
+
 	def __str__(self):
-		return '%s' % (self.codigo_reserva)
+		return '%s' % (self.Edicion)
 
 
 class Comentario(models.Model):
