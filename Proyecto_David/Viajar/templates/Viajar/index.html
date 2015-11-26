@@ -25,6 +25,9 @@
 					<td>tipo</td>
 					<td>precio</td>
 					<td>plazas_disponibles</td>
+			{% if user.is_authenticated %}
+					<td>reserva</td>
+			{% endif %}
 				</tr>
 				{% for viaje in Viajes %}
 					<tr>
@@ -34,6 +37,10 @@
 						<td>{{ viaje.tipo }}</td>
 						<td>{{ viaje.precio }}</td>
 						<td>{{ viaje.plazas_disponibles }}</td>
+			{% if user.is_authenticated %}
+						<td> <button>Reservar</button> </td>
+			{% endif %}
+			
 					</tr>
 				{% endfor %}
 			</table>

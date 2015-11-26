@@ -38,4 +38,11 @@ def logoutpage(request):
 	logout(request)
 	return HttpResponseRedirect("/")
 
+def ediciones(request,viaje_id): #viaje_id es la clave primaria que te crea django por defecto.
+	ediciones = Edicion.objects.filter(viaje=viaje_id) #De todas las ediciones, que me coja solamente las del viaje que selecciono.
+	return render (request, 'Viajar/ediciones.html', {'ediciones': ediciones,})	#con esto le digo que me lleve al html(me lo saca en la pagina)
+
+
+
+
 

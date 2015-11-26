@@ -37,12 +37,15 @@ class Edicion(models.Model):
 	fecha_regreso = models.CharField(max_length=30)
 	n_plazas = models.CharField(max_length=30)
 	viaje = models.ForeignKey(Viaje)
+	usuarios = models.ManyToManyField(User)
+
 
 	class Meta:
 		verbose_name = 'edición'# El nombre del modelo
 		verbose_name_plural = 'ediciones'# El nombre en plural
-			def __str__(self): 
-				return self.Edicion
+
+	def __str__(self): 
+		return self.Edicion
 
 	def __str__(self):
 		return '%s' % (self.Edicion)

@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-
+# En cada modelo django crea un ...._id para cada viaje,usuario,edicion...
 
 class Viaje(models.Model):
 	continente = models.CharField(max_length=30,default='Africa')
@@ -37,6 +37,8 @@ class Edicion(models.Model):
 	fecha_regreso = models.CharField(max_length=30)
 	n_plazas = models.CharField(max_length=30)
 	viaje = models.ForeignKey(Viaje)
+	usuarios = models.ManyToManyField(User)
+
 
 	class Meta:
 		verbose_name = 'edición'# El nombre del modelo
