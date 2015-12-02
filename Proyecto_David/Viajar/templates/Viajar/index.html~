@@ -25,7 +25,10 @@
 					<td>tipo</td>
 					<td>precio</td>
 					<td>plazas_disponibles</td>
+					<td>Ediciones</td>
+			{% if user.is_authenticated %}
 					<td>reserva</td>
+			{% endif %}
 				</tr>
 				{% for viaje in Viajes %}
 					<tr>
@@ -35,6 +38,7 @@
 						<td>{{ viaje.tipo }}</td>
 						<td>{{ viaje.precio }}</td>
 						<td>{{ viaje.plazas_disponibles }}</td>
+						<td><a href="{% url 'ediciones' viaje.id %}">Ir a ediciones</a></td> 
 			{% if user.is_authenticated %}
 						<td> <button>Reservar</button> </td>
 			{% endif %}

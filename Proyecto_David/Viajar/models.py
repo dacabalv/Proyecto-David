@@ -11,6 +11,7 @@ class Viaje(models.Model):
 	tipo = models.CharField(max_length=30,default='avion')
 	precio = models.CharField(max_length=10,default='nulo')
 	plazas_disponibles = models.CharField(max_length=20,default='0')
+	foto = models.ImageField(upload_to='pagina/static/media',null=True) #null=true es para que no de error si el campo está vacio.
 	
 	
 
@@ -37,18 +38,17 @@ class Edicion(models.Model):
 	fecha_regreso = models.CharField(max_length=30)
 	n_plazas = models.CharField(max_length=30)
 	viaje = models.ForeignKey(Viaje)
-	usuarios = models.ManyToManyField(User)
+	usuarios = models.ManyToManyField(User,null=True)
+
+	def __str__(self):
+		return '%s' % (self.viaje)
 
 
 	class Meta:
 		verbose_name = 'edición'# El nombre del modelo
 		verbose_name_plural = 'ediciones'# El nombre en plural
 
-	def __str__(self): 
-		return self.Edicion
-
-	def __str__(self):
-		return '%s' % (self.Edicion)
+	
 
 
 class Comentario(models.Model):

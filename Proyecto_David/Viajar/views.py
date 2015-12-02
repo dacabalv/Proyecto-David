@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Viajar.models import Viaje
+from Viajar.models import Viaje,Edicion #aquí importo los del models.
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect
