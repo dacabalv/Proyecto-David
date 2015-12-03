@@ -38,7 +38,7 @@ class Edicion(models.Model):
 	fecha_regreso = models.CharField(max_length=30)
 	n_plazas = models.CharField(max_length=30)
 	viaje = models.ForeignKey(Viaje)
-	usuarios = models.ManyToManyField(User)
+	usuarios = models.ManyToManyField(User,null=True)
 
 	def __str__(self):
 		return '%s' % (self.viaje)

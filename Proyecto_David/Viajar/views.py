@@ -42,7 +42,13 @@ def ediciones(request,viaje_id): #viaje_id es la clave primaria que te crea djan
 	ediciones = Edicion.objects.filter(viaje=viaje_id) #De todas las ediciones, que me coja solamente las del viaje que selecciono.
 	return render (request, 'Viajar/ediciones.html', {'ediciones': ediciones,})	#con esto le digo que me lleve al html(me lo saca en la pagina)
 
-
+def selecciones(request,edicion_id):
+	edicion = get_object_or_404(Edicion, pk = edicion_id)	
+	edicion.usuarios.append(request.user)
+	edicion.save()
+	
+	
+	return HttpResponseRedirect("/")
 
 
 
