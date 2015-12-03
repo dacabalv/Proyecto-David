@@ -36,7 +36,7 @@ class Usuario(models.Model):
 class Edicion(models.Model):
 	fecha_salida = models.CharField(max_length=30)
 	fecha_regreso = models.CharField(max_length=30)
-	n_plazas = models.CharField(max_length=30)
+	n_plazas = models.IntegerField()
 	viaje = models.ForeignKey(Viaje)
 	usuarios = models.ManyToManyField(User,null=True)
 

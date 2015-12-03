@@ -23,7 +23,7 @@
 						<td>{{ edicion.fecha_regreso }}</td>
 						<td>{{ edicion.n_plazas }}</td>
 						<td>{{ edicion.viaje  }}</td>
-						<td>{{ edicion.usuarios }}</td>
+						<td><a href="{% url 'selecciones' edicion.id %}">Reserva</a></td>
 
 					</tr>
 					{% endfor %} 

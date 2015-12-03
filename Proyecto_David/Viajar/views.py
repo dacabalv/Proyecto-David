@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from Viajar.models import Viaje,Edicion #aquí importo los del models.
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout,authenticate
@@ -44,11 +44,11 @@ def ediciones(request,viaje_id): #viaje_id es la clave primaria que te crea djan
 
 def selecciones(request,edicion_id):
 	edicion = get_object_or_404(Edicion, pk = edicion_id)	
-	edicion.usuarios.append(request.user)
+	edicion.usuarios.add(request.user)
+	edicion.n_plazas = edicion.n_plazas-1  #este decrementa el numero de plazas cada vez que reserva un usuario una edicion.
 	edicion.save()
-	
-	
-	return HttpResponseRedirect("/")
+	reservas = Edicion.objects.filter(usuarios__in=[request.user.id])
+	return render (request, 'Viajar/reserva.html', {'reservas': reservas,})
 
 
 
