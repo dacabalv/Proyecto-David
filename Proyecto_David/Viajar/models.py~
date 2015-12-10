@@ -38,7 +38,7 @@ class Edicion(models.Model):
 	fecha_regreso = models.CharField(max_length=30)
 	n_plazas = models.IntegerField()
 	viaje = models.ForeignKey(Viaje)
-	usuarios = models.ManyToManyField(User,null=True)
+	usuarios = models.ManyToManyField(User,null=True) #quiero sacar las ediciones que tiene el usuario actual y pasarselas al html reservas.
 
 	def __str__(self):
 		return '%s' % (self.viaje)
@@ -48,7 +48,7 @@ class Edicion(models.Model):
 		verbose_name = 'edición'# El nombre del modelo
 		verbose_name_plural = 'ediciones'# El nombre en plural
 
-	
+
 
 
 class Comentario(models.Model):

@@ -1,1 +1,30 @@
-Esta es la página de las reservas.
+<html>
+	<head>
+		<title>Reservas de la edicion</title>
+	</head>
+	<body>
+	
+		</ul>
+	
+			<table border="2">
+				<tr>
+					<td>fecha_salida</td>
+					<td>fecha_regreso </td>
+					<td>viaje</td>
+
+				</tr>
+				
+					<tr>
+					{% for reserva in reservas %} 
+						
+						<td>{{ reserva.fecha_salida }}</td>
+						<td>{{ reserva.fecha_regreso }}</td>
+						<td>{{ reserva.viaje  }}</td>
+
+					</tr>
+					{% endfor %} 
+				
+			</table>
+		
+	</body>
+</html>

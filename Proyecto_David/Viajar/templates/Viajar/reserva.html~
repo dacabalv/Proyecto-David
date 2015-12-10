@@ -1,1 +1,32 @@
-sadasfda
+<html>
+	<head>
+		<title>Reservas de la edicion</title>
+	</head>
+	<body>
+	
+		</ul>
+	
+			<table border="2">
+				<tr>
+					<td>fecha_salida</td>
+					<td>fecha_regreso </td>
+					<td>n_plazas</td>
+					<td>viaje</td>
+					<td>usuarios</td>
+
+				</tr>
+				
+					<tr>
+					{% for reserva in reservas %} 
+						
+						<td>{{ reserva.fecha_salida }}</td>
+						<td>{{ reserva.fecha_regreso }}</td>
+						<td>{{ reserva.viaje  }}</td>
+
+					</tr>
+					{% endfor %} 
+				
+			</table>
+		
+	</body>
+</html>

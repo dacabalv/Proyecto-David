@@ -7,6 +7,7 @@
 	<body>
 		{% if user.is_authenticated %}
 			<p>Soy {{ user.get_username }}</p>
+			<p><a href="{% url 'reservas_usuario' %}">
 		{% endif %}
 	<nav>
 		<ul>
@@ -19,7 +20,7 @@
 		</ul>
 	</nav>
 		{% if Viajes %}
-			<table id= TablaPrincipal border="2">  <!-- Le meto el id para usarlo en su css correspondiente-->
+			<table id="TablaPrincipal" border="2">  <!-- Le meto el id para usarlo en su css correspondiente-->
 				<tr>
 					<td>continente</td>
 					<td>pais</td>

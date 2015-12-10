@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect
 # Create your views here.
+#Aquí en el views hago las consultas sobre el models y se lo paso a los html.
 
 def indice(request):
    Viajes = Viaje.objects.all()
@@ -45,10 +46,15 @@ def ediciones(request,viaje_id): #viaje_id es la clave primaria que te crea djan
 def selecciones(request,edicion_id):
 	edicion = get_object_or_404(Edicion, pk = edicion_id)	
 	edicion.usuarios.add(request.user)
-	edicion.n_plazas = edicion.n_plazas-1
+	edicion.n_plazas = edicion.n_plazas-1  #este decrementa el numero de plazas cada vez que reserva un usuario una edicion.
 	edicion.save()
 	reservas = Edicion.objects.filter(usuarios__in=[request.user.id])
 	return render (request, 'Viajar/reserva.html', {'reservas': reservas,})
 
+def reservas_usuario(request):
+	reservas = Edicion.objects.filter(usuarios__in=[request.user.id])
+	return render (request, 'Viajar/reserva.html', {'reservas': reservas,})
 
+	
+	
 
