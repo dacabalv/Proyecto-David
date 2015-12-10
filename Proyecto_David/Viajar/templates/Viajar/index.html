@@ -1,6 +1,8 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<title>MiProyecto</title>
+			<link rel="stylesheet" type="text/css" href="{% static "css/principal.css" %}"> 
 	</head>
 	<body>
 		{% if user.is_authenticated %}
@@ -17,7 +19,7 @@
 		</ul>
 	</nav>
 		{% if Viajes %}
-			<table border="2">
+			<table id="TablaPrincipal" border="2">  <!-- Le meto el id para usarlo en su css correspondiente-->
 				<tr>
 					<td>continente</td>
 					<td>pais</td>
