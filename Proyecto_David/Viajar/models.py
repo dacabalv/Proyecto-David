@@ -54,5 +54,6 @@ class Edicion(models.Model):
 
 class Comentario(models.Model):
 	opinion = models.TextField()
-	usuario = models.ForeignKey(Usuario)
+	usuario = models.ForeignKey(User,null=True)
+	viaje =models.ForeignKey(Viaje,default=1)
 	

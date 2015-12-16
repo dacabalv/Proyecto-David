@@ -39,6 +39,7 @@ class Edicion(models.Model):
 	n_plazas = models.IntegerField()
 	viaje = models.ForeignKey(Viaje)
 	usuarios = models.ManyToManyField(User,null=True) #quiero sacar las ediciones que tiene el usuario actual y pasarselas al html reservas.
+#Lista de usuarios que tienen hecha una edicion
 
 	def __str__(self):
 		return '%s' % (self.viaje)
@@ -53,5 +54,6 @@ class Edicion(models.Model):
 
 class Comentario(models.Model):
 	opinion = models.TextField()
-	usuario = models.ForeignKey(Usuario)
+	usuario = models.ForeignKey(User)
+	viaje =models.ForeignKey(Viaje,default=1)
 	

@@ -36,6 +36,12 @@
 			{{ form.as_p }}
 			<button type="submit">Guardar</button>
 		</form>
-		
+					{% for comentario in comentarios %}
+
+						<p>{{ comentario.viaje }}</p>
+						<p>{{ comentario.opinion }}</p>
+						<p>{{ comentario.usuario }}</p>
+
+					{% endfor %}
 	</body>
 </html>
