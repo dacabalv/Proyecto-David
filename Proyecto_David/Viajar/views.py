@@ -1,4 +1,5 @@
 from django.shortcuts import render,get_object_or_404
+from Viajar.forms import ComentarioForm
 from Viajar.models import Viaje,Edicion #aquí importo los del models.
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout,authenticate
@@ -43,8 +44,16 @@ def logoutpage(request):
 	return HttpResponseRedirect("/")
 
 def ediciones(request,viaje_id): #viaje_id es la clave primaria que te crea django por defecto.
-	ediciones = Edicion.objects.filter(viaje=viaje_id) #De todas las ediciones, que me coja solamente las del viaje que selecciono.
-	return render (request, 'Viajar/ediciones.html', {'ediciones': ediciones,})	#con esto le digo que me lleve al html(me lo saca en la pagina)
+	if request.method == "POST":
+		form = ComentarioForm(request.POST)
+		if form.is_valid():
+			comentario = form.save()
+			comentario.save()
+			return HttpResponseRedirect("/")
+	else:
+		form = ComentarioForm()
+		ediciones = Edicion.objects.filter(viaje=viaje_id ) #De todas las ediciones, que me coja solamente las del viaje que selecciono.
+	return render (request, 'Viajar/ediciones.html', {'ediciones': ediciones,'form':form,})	#con esto le digo que me lleve al html(me lo saca en la pagina)
 
 @login_required
 def selecciones(request,edicion_id):

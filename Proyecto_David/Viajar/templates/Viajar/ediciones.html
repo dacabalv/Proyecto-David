@@ -21,7 +21,10 @@
 						
 						<td>{{ edicion.fecha_salida }}</td>
 						<td>{{ edicion.fecha_regreso }}</td>
+				   {% if edicion.n_plazas <= 0 %} <td>No hay plazas disponibles</td>
+					{% else %}
 						<td>{{ edicion.n_plazas }}</td>
+					{% endif %}
 						<td>{{ edicion.viaje  }}</td>
 						<td><a href="{% url 'selecciones' edicion.id %}">Reserva</a></td>
 
@@ -29,6 +32,10 @@
 					{% endfor %} 
 				
 			</table>
+			<form method="POST"> {% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">Guardar</button>
+		</form>
 		
 	</body>
 </html>

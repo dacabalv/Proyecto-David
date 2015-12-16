@@ -7,7 +7,7 @@
 	<body>
 		{% if user.is_authenticated %}
 			<p>Soy {{ user.get_username }}</p>
-			<p><a href="{% url 'reservas_usuario' %}">
+			<p><a href="{% url 'reservas_usuario' %}">Mis reservas</a></p>
 		{% endif %}
 	<nav>
 		<ul>
