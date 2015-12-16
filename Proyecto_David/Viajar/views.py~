@@ -47,8 +47,8 @@ def ediciones(request,viaje_id): #viaje_id es la clave primaria que te crea djan
 	if request.method == "POST":
 		form = ComentarioForm(request.POST)
 		if form.is_valid():
-			receta = form.save()
-			receta.save()
+			comentario = form.save()
+			comentario.save()
 			return HttpResponseRedirect("/")
 	else:
 		form = ComentarioForm()

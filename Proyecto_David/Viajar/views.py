@@ -23,7 +23,7 @@ def registro(request):
 	return render(request, "Viajar/registro.html", {
 'form': form,})
 
-@login_required
+
 def loginpage(request):
 	if request.method == 'POST':
 		form = AuthenticationForm(request.POST)
