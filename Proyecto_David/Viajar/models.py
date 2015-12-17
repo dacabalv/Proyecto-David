@@ -12,11 +12,13 @@ class Viaje(models.Model):
 	precio = models.CharField(max_length=10,default='nulo')
 	plazas_disponibles = models.CharField(max_length=20,default='0')
 	foto = models.ImageField(upload_to='Viajar/static/media',null=True) #null=true es para que no de error si el campo está vacio.
+	descripcion = models.TextField(null=True)
 	
 	
 
 	def __str__(self):
 		return '%s' % (self.lugar)
+
 
 class Usuario(models.Model):
 	nombre = models.CharField(max_length=30)

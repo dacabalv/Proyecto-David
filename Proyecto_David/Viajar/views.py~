@@ -52,7 +52,7 @@ def ediciones(request,viaje_id): #viaje_id es la clave primaria que te crea djan
 			comentario.usuario = request.user
 			comentario.viaje = get_object_or_404(Viaje, pk = viaje_id)
 			comentario.save()
-			return HttpResponseRedirect("/ediciones/"+viaje_id)
+			return HttpResponseRedirect("/ediciones/"+viaje_id)#al meter el comentario que me redireccione en la página que estoy.
 	else:
 		form = ComentarioForm()
 		comentarios = Comentario.objects.filter(viaje=viaje_id )
@@ -72,6 +72,10 @@ def selecciones(request,edicion_id):
 def reservas_usuario(request):
 	reservas = Edicion.objects.filter(usuarios__in=[request.user.id])
 	return render (request, 'Viajar/reserva.html', {'reservas': reservas,})
+
+def detalles_viaje(request,viaje_id):
+	detalles = get_object_or_404(Viaje, pk = viaje_id) #detalles es una variable que creo y detras es la orden que le asigno.
+	return render (request, 'Viajar/detalles.html', {'detalles':detalles,}) #son variables que creo{'...' : '...'} para usarlas en el html. 
 
 	
 	

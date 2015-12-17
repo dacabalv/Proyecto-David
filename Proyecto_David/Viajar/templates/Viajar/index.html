@@ -27,8 +27,7 @@
 					<td>lugar</td>
 					<td>tipo</td>
 					<td>precio</td>
-					<td>plazas_disponibles</td>
-					<td>foto</td>
+					<td>detalles</td>
 					<td>Ediciones</td>
 					
 			
@@ -40,8 +39,7 @@
 						<td>{{ viaje.lugar }}</td>
 						<td>{{ viaje.tipo }}</td>
 						<td>{{ viaje.precio }}</td>
-						<td>{{ viaje.plazas_disponibles }}</td>
-						<td><img src="{{ viaje.foto }}"></td>
+						<td><a href="{% url 'detalles_viaje' viaje.id %}">Ir a detalles</a></td>
 						<td><a href="{% url 'ediciones' viaje.id %}">Ir a ediciones</a></td> 
 						
 			
