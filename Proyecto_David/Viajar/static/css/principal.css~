@@ -1,4 +1,4 @@
-table { 
+#TablaPrincipal { 
 	color: black; 
 	font-family: Verdana;
 	text-align: center; }
@@ -31,7 +31,7 @@ table {
     padding: 8px;
 	 text-decoration:none;
     display: block;
-    color: black;
+    color: #black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -55,7 +55,7 @@ h1 {
 	font-style:italic;
 	}
 
-table {
+.TablaPrincipal {
 	float:left;
 	margin-left:210px;
 	margin-top:40px;
@@ -79,36 +79,35 @@ table {
 	-moz-border-radius-topleft:12px;
 	-webkit-border-top-left-radius:12px;
 	border-top-left-radius:12px;
-} table {
+}.TablaPrincipal table{
     border-collapse: collapse;
         border-spacing: 0;
 	width:100%;
 	height:100%;
 	margin:0px;padding:0px;
-}table tr:last-child td:last-child {
+}.TablaPrincipal tr:last-child td:last-child {
 	-moz-border-radius-bottomright:12px;
 	-webkit-border-bottom-right-radius:12px;
 	border-bottom-right-radius:12px;
 }
-table tr:first-child td:first-child {
+.TablaPrincipal table tr:first-child td:first-child {
 	-moz-border-radius-topleft:12px;
 	-webkit-border-top-left-radius:12px;
 	border-top-left-radius:12px;
 }
- table tr:first-child td:last-child {
+.TablaPrincipal table tr:first-child td:last-child {
 	-moz-border-radius-topright:12px;
 	-webkit-border-top-right-radius:12px;
 	border-top-right-radius:12px;
-}table tr:last-child td:first-child{
+}.TablaPrincipal tr:last-child td:first-child{
 	-moz-border-radius-bottomleft:12px;
 	-webkit-border-bottom-left-radius:12px;
 	border-bottom-left-radius:12px;
-}table tr:hover td{
+}.TablaPrincipal tr:hover td{
 	
 }
-table tr:nth-child(odd){ background-color:#ffaa56; }
-table tr:nth-child(even)    { background-color:#ffffff; }
-table td{
+.TablaPrincipal tr:nth-child(odd){ background-color:#ffaa56; }
+.TablaPrincipal tr:nth-child(even)    { background-color:#ffffff; }.TablaPrincipal td{
 	vertical-align:middle;
 	
 	
@@ -120,14 +119,14 @@ table td{
 	font-family:Comic Sans MS;
 	font-weight:normal;
 	color:#000000;
-}table tr:last-child td{
+}.TablaPrincipal tr:last-child td{
 	border-width:0px 1px 0px 0px;
-}table tr td:last-child{
+}.TablaPrincipal tr td:last-child{
 	border-width:0px 0px 1px 0px;
-}table tr:last-child td:last-child{
+}.TablaPrincipal tr:last-child td:last-child{
 	border-width:0px 0px 0px 0px;
 }
-table tr:first-child td{
+.TablaPrincipal tr:first-child td{
 		background:-o-linear-gradient(bottom, #7f3f00 5%, #565603 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7f3f00), color-stop(1, #565603) );
 	background:-moz-linear-gradient( center top, #7f3f00 5%, #565603 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#7f3f00", endColorstr="#565603");	background: -o-linear-gradient(top,#7f3f00,565603);
@@ -141,16 +140,16 @@ table tr:first-child td{
 	font-weight:bold;
 	color:#ffffff;
 }
-table tr:first-child:hover td{
+.TablaPrincipal tr:first-child:hover td{
 	background:-o-linear-gradient(bottom, #7f3f00 5%, #565603 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7f3f00), color-stop(1, #565603) );
 	background:-moz-linear-gradient( center top, #7f3f00 5%, #565603 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#7f3f00", endColorstr="#565603");	background: -o-linear-gradient(top,#7f3f00,565603);
 
 	background-color:#7f3f00;
 }
-table tr:first-child td:first-child{
+.TablaPrincipal tr:first-child td:first-child{
 	border-width:0px 0px 1px 0px;
 }
-table tr:first-child td:last-child{
+.TablaPrincipal tr:first-child td:last-child{
 	border-width:0px 0px 1px 1px;
 }
