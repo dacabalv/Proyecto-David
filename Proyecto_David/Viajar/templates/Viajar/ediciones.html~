@@ -1,12 +1,14 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<title>Ediciones del viaje</title>
+			<link rel="stylesheet" type="text/css" href="{% static "css/principal.css" %}"> 
 	</head>
 	<body>
 	
 		</ul>
 	
-			<table border="2">
+			<table border=3>
 				<tr>
 					<td>fecha_salida</td>
 					<td>fecha_regreso </td>
@@ -25,7 +27,7 @@
 					{% else %}
 						<td>{{ edicion.n_plazas }}</td>
 					{% endif %}
-						<td>{{ edicion.viaje  }}</td>
+						<td>{{ edicion.viaje }}</td>
 						<td><a href="{% url 'selecciones' edicion.id %}">Reserva</a></td>
 
 					</tr>

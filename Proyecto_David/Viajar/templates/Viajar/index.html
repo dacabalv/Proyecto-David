@@ -10,7 +10,7 @@
 		<div class=menu>
 		<ul>
 		{% if user.is_authenticated %}
-			<li>Soy {{ user.get_username }}</li>
+			<li id="soy">Soy {{ user.get_username }}</li>
 			<li><a href="{% url 'reservas_usuario' %}">Mis reservas</a></li>
 		{% endif %}
 	

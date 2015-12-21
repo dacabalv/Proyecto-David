@@ -1,4 +1,4 @@
-#TablaPrincipal { 
+table { 
 	color: black; 
 	font-family: Verdana;
 	text-align: center; }
@@ -9,7 +9,7 @@
 .menu ul{
 	overflow:hidden;
 	margin:auto;
-	width: 30%;}
+	width: 70%;}
 
 .menu li {
     float: left;
@@ -18,22 +18,29 @@
 .menu a{
     display: block;
     padding: 8px;
-    background-color: #dddddd;
 	 text-decoration:none;
     display: block;
-    color: white;
+    color: #996633;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;}
+    text-decoration: none;
+	 font-size:1.7em;}
 
-li a:hover {
-    background-color: #111;
-}
+#soy{
+	display: block;
+    padding: 8px;
+	 text-decoration:none;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	 font-size:1.7em;}
 
 .contenido {
 	float:left;}
 
-.menu li:hover{background-color:grey;}
+.menu li a:hover{background-color:#cc9900;}
 
 body {
 	background-image: url("/Viajar/static/media/fondo_principal.jpg");
@@ -48,9 +55,9 @@ h1 {
 	font-style:italic;
 	}
 
-.TablaPrincipal {
+table {
 	float:left;
-	margin-left:180px;
+	margin-left:210px;
 	margin-top:40px;
 	padding:0px;
 	width:100%;
@@ -72,35 +79,36 @@ h1 {
 	-moz-border-radius-topleft:12px;
 	-webkit-border-top-left-radius:12px;
 	border-top-left-radius:12px;
-}.TablaPrincipal table{
+} table {
     border-collapse: collapse;
         border-spacing: 0;
 	width:100%;
 	height:100%;
 	margin:0px;padding:0px;
-}.TablaPrincipal tr:last-child td:last-child {
+}table tr:last-child td:last-child {
 	-moz-border-radius-bottomright:12px;
 	-webkit-border-bottom-right-radius:12px;
 	border-bottom-right-radius:12px;
 }
-.TablaPrincipal table tr:first-child td:first-child {
+table tr:first-child td:first-child {
 	-moz-border-radius-topleft:12px;
 	-webkit-border-top-left-radius:12px;
 	border-top-left-radius:12px;
 }
-.TablaPrincipal table tr:first-child td:last-child {
+ table tr:first-child td:last-child {
 	-moz-border-radius-topright:12px;
 	-webkit-border-top-right-radius:12px;
 	border-top-right-radius:12px;
-}.TablaPrincipal tr:last-child td:first-child{
+}table tr:last-child td:first-child{
 	-moz-border-radius-bottomleft:12px;
 	-webkit-border-bottom-left-radius:12px;
 	border-bottom-left-radius:12px;
-}.TablaPrincipal tr:hover td{
+}table tr:hover td{
 	
 }
-.TablaPrincipal tr:nth-child(odd){ background-color:#ffaa56; }
-.TablaPrincipal tr:nth-child(even)    { background-color:#ffffff; }.TablaPrincipal td{
+table tr:nth-child(odd){ background-color:#ffaa56; }
+table tr:nth-child(even)    { background-color:#ffffff; }
+table td{
 	vertical-align:middle;
 	
 	
@@ -112,14 +120,14 @@ h1 {
 	font-family:Comic Sans MS;
 	font-weight:normal;
 	color:#000000;
-}.TablaPrincipal tr:last-child td{
+}table tr:last-child td{
 	border-width:0px 1px 0px 0px;
-}.TablaPrincipal tr td:last-child{
+}table tr td:last-child{
 	border-width:0px 0px 1px 0px;
-}.TablaPrincipal tr:last-child td:last-child{
+}table tr:last-child td:last-child{
 	border-width:0px 0px 0px 0px;
 }
-.TablaPrincipal tr:first-child td{
+table tr:first-child td{
 		background:-o-linear-gradient(bottom, #7f3f00 5%, #565603 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7f3f00), color-stop(1, #565603) );
 	background:-moz-linear-gradient( center top, #7f3f00 5%, #565603 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#7f3f00", endColorstr="#565603");	background: -o-linear-gradient(top,#7f3f00,565603);
@@ -133,16 +141,16 @@ h1 {
 	font-weight:bold;
 	color:#ffffff;
 }
-.TablaPrincipal tr:first-child:hover td{
+table tr:first-child:hover td{
 	background:-o-linear-gradient(bottom, #7f3f00 5%, #565603 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7f3f00), color-stop(1, #565603) );
 	background:-moz-linear-gradient( center top, #7f3f00 5%, #565603 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#7f3f00", endColorstr="#565603");	background: -o-linear-gradient(top,#7f3f00,565603);
 
 	background-color:#7f3f00;
 }
-.TablaPrincipal tr:first-child td:first-child{
+table tr:first-child td:first-child{
 	border-width:0px 0px 1px 0px;
 }
-.TablaPrincipal tr:first-child td:last-child{
+table tr:first-child td:last-child{
 	border-width:0px 0px 1px 1px;
 }

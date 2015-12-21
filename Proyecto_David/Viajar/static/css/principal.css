@@ -9,7 +9,7 @@
 .menu ul{
 	overflow:hidden;
 	margin:auto;
-	width: 30%;}
+	width: 70%;}
 
 .menu li {
     float: left;
@@ -18,22 +18,29 @@
 .menu a{
     display: block;
     padding: 8px;
-    background-color: #dddddd;
 	 text-decoration:none;
     display: block;
-    color: white;
+    color: #996633;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;}
+    text-decoration: none;
+	 font-size:1.7em;}
 
-li a:hover {
-    background-color: #111;
-}
+#soy{
+	display: block;
+    padding: 8px;
+	 text-decoration:none;
+    display: block;
+    color: #black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	 font-size:1.7em;}
 
 .contenido {
 	float:left;}
 
-.menu li:hover{background-color:grey;}
+.menu li a:hover{background-color:#cc9900;}
 
 body {
 	background-image: url("/Viajar/static/media/fondo_principal.jpg");
@@ -50,7 +57,7 @@ h1 {
 
 .TablaPrincipal {
 	float:left;
-	margin-left:180px;
+	margin-left:210px;
 	margin-top:40px;
 	padding:0px;
 	width:100%;
