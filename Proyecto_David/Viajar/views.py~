@@ -75,7 +75,7 @@ def reservas_usuario(request):
 
 def detalles_viaje(request,viaje_id):
 	detalles = get_object_or_404(Viaje, pk = viaje_id) #detalles es una variable que creo y detras es la orden que le asigno.
-	return render (request, 'Viajar/detalles.html', {'detalles':detalles,}) #son variables que creo{'...' : '...'} para usarlas en el html. 
+	return render (request, 'Viajar/detalles.html', {'detalles':detalles,}) #son variables que uso{'...' : '...'} para pasarlas en el html. 
 
 	
 	

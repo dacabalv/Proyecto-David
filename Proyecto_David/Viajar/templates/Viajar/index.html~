@@ -4,7 +4,10 @@
 		<title>MiProyecto</title>
 			<link rel="stylesheet" type="text/css" href="{% static "css/principal.css" %}">  <!--Su css es principal.css-->
 	</head>
+	<h1>Viajes por el mundo</h1>
 	<body>
+	<div class=contenedor>
+		<div class=menu>
 		{% if user.is_authenticated %}
 			<p>Soy {{ user.get_username }}</p>
 			<p><a href="{% url 'reservas_usuario' %}">Mis reservas</a></p>
@@ -19,8 +22,12 @@
 			{% endif %}
 		</ul>
 	</nav>
+	</div>
+		
 		{% if Viajes %}
-			<table id="TablaPrincipal" border="2">  <!-- Le meto el id para usarlo en su css correspondiente-->
+		<div class=contenido>
+			
+			<table class="TablaPrincipal" border="2">  <!-- Le meto el id para usarlo en su css correspondiente-->
 				<tr>
 					<td>continente</td>
 					<td>pais</td>
@@ -39,13 +46,15 @@
 						<td>{{ viaje.lugar }}</td>
 						<td>{{ viaje.tipo }}</td>
 						<td>{{ viaje.precio }}</td>
-						<td><a href="{% url 'detalles' viaje.id %}">Ir a detalles</a></td>
+						<td><a href="{% url 'detalles_viaje' viaje.id %}">Ir a detalles</a></td>
 						<td><a href="{% url 'ediciones' viaje.id %}">Ir a ediciones</a></td> 
 						
 			
 					</tr>
 				{% endfor %}
 			</table>
+		</div>
+		</div>
 		{% else %}
 			<p>Página del cheriff</p>			
 		{% endif %}

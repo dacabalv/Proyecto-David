@@ -73,6 +73,7 @@ def reservas_usuario(request):
 	reservas = Edicion.objects.filter(usuarios__in=[request.user.id])
 	return render (request, 'Viajar/reserva.html', {'reservas': reservas,})
 
+@login_required
 def detalles_viaje(request,viaje_id):
 	detalles = get_object_or_404(Viaje, pk = viaje_id) #detalles es una variable que creo y detras es la orden que le asigno.
 	return render (request, 'Viajar/detalles.html', {'detalles':detalles,}) #son variables que uso{'...' : '...'} para pasarlas en el html. 
